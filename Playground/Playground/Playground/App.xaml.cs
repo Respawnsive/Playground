@@ -1,7 +1,9 @@
+using System;
 using Playground.ViewModels;
 using Playground.Views;
 using Prism.Ioc;
 using Prism.Magician;
+using Prism.Navigation;
 using Xamarin.Forms;
 
 namespace Playground
@@ -15,11 +17,13 @@ namespace Playground
 
         protected override void OnInitialized()
         {
-            NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainPage)}");
+            NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainPage)}")
+                .OnNavigationError(OnNavigationError);
         }
 
-        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        private void OnNavigationError(Exception ex)
         {
+            System.Diagnostics.Debugger.Break();
         }
     }
 }

@@ -5,7 +5,7 @@ using Xamarin.Essentials.Interfaces;
 
 namespace Playground
 {
-    public partial class Startup : ShinyStartup
+    public partial class MainStartup : ShinyStartup
     {
         public override void ConfigureServices(IServiceCollection services)
         {

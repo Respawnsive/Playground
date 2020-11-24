@@ -1,19 +1,14 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
-using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Playground.Services;
+using Prism.Magician;
 
 namespace Playground.ViewModels
 {
-    public class MainPageViewModel : ViewModelBase
+    public partial class MainPageViewModel : ViewModelBase
     {
-        public MainPageViewModel(INavigationService navigationService)
-            : base(navigationService)
+        public MainPageViewModel(BaseServices baseServices)
+            : base(baseServices)
         {
-            Title = "Main Page";
+            Title = "Hello from Xamarin.Forms, Shiny, Prism & ReactiveUI!";
         }
     }
 }

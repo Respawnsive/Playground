@@ -6,11 +6,15 @@
 
   <ItemGroup>
     <PackageReference Include="Prism.DryIoc.Forms" Version="8.0.0.1909" />
-    <PackageReference Include="Prism.Magician" Version="8.0.114-beta" />
+    <PackageReference Include="Prism.Magician" Version="8.0.125-beta" />
     <PackageReference Include="ReactiveUI" Version="12.1.5" />
     <PackageReference Include="Shiny.Core" Version="1.2.0.1755" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1687" />
     <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.5.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>

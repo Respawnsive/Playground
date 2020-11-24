@@ -6,7 +6,7 @@ using Shiny;
 namespace Playground.Droid
 {
     [Application(Theme = "@style/MainTheme")]
-    public class MainApplication : ShinyAndroidApplication<Startup>
+    public class MainApplication : ShinyAndroidApplication<MainStartup>
     {
         public MainApplication(IntPtr javaReference, JniHandleOwnership transfer)
             : base(javaReference, transfer)

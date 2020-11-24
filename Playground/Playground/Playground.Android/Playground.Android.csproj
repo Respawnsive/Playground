@@ -74,7 +74,7 @@
       <Version>8.0.0.1909</Version>
     </PackageReference>
     <PackageReference Include="Prism.Magician">
-      <Version>8.0.114-beta</Version>
+      <Version>8.0.125-beta</Version>
     </PackageReference>
     <PackageReference Include="Shiny.Core">
       <Version>1.2.0.1755</Version>

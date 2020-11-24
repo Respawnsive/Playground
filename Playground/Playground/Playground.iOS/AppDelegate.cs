@@ -16,7 +16,7 @@ namespace Playground.iOS
     {
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            this.ShinyFinishedLaunching(new Startup());
+            this.ShinyFinishedLaunching(new MainStartup());
 
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
