@@ -9,8 +9,8 @@
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Playground.Mobile.Droid</RootNamespace>
-    <AssemblyName>Playground.Mobile.Android</AssemblyName>
+    <RootNamespace>Playground.Forms.Droid</RootNamespace>
+    <AssemblyName>Playground.Forms.Android</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkVersion>v10.0</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
@@ -124,9 +124,9 @@
     <AndroidResource Include="Resources\values\strings.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Playground.Mobile\Playground.Mobile.csproj">
+    <ProjectReference Include="..\Playground.Forms\Playground.Forms.csproj">
       <Project>{A682884C-CB44-4A89-B752-27BB634E0ABE}</Project>
-      <Name>Playground.Mobile</Name>
+      <Name>Playground.Forms</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

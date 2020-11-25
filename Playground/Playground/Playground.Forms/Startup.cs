@@ -3,7 +3,7 @@ using Shiny;
 using Xamarin.Essentials.Implementation;
 using Xamarin.Essentials.Interfaces;
 
-namespace Playground.Mobile
+namespace Playground.Forms
 {
     public partial class Startup : ShinyStartup
     {

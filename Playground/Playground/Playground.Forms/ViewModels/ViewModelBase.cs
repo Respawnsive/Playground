@@ -1,7 +1,7 @@
 ﻿using Prism.Magician;
 using ReactiveUI;
 
-namespace Playground.Mobile.ViewModels
+namespace Playground.Forms.ViewModels
 {
     [ViewModelBase]
     public abstract partial class ViewModelBase : ReactiveObject

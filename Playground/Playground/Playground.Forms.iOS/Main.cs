@@ -1,6 +1,6 @@
 ﻿using UIKit;
 
-namespace Playground.Mobile.iOS
+namespace Playground.Forms.iOS
 {
     public class Application
     {

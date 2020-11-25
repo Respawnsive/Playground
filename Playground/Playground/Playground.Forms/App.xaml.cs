@@ -3,7 +3,7 @@ using Prism.Magician;
 using Prism.Navigation;
 using Xamarin.Forms;
 
-namespace Playground.Mobile
+namespace Playground.Forms
 {
     [AutoRegisterViews]
     public partial class App

@@ -4,15 +4,15 @@ using Android.Content.PM;
 using Android.OS;
 using Shiny;
 
-namespace Playground.Mobile.Droid
+namespace Playground.Forms.Droid
 {
     [Activity(Theme = "@style/MainTheme", ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            TabLayoutResource = Playground.Mobile.Droid.Resource.Layout.Tabbar;
-            ToolbarResource = Playground.Mobile.Droid.Resource.Layout.Toolbar;
+            TabLayoutResource = Resource.Layout.Tabbar;
+            ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
 

@@ -1,4 +1,4 @@
-﻿namespace Playground.Mobile.Views
+﻿namespace Playground.Forms.Views
 {
     public partial class MainPage
     {

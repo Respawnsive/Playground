@@ -8,9 +8,9 @@
     <ProjectGuid>{A514BB00-A16C-4C2A-822A-2827D5769DF1}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Playground.Mobile.iOS</RootNamespace>
+    <RootNamespace>Playground.Forms.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>Playground.Mobile.iOS</AssemblyName>
+    <AssemblyName>Playground.Forms.iOS</AssemblyName>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -211,9 +211,9 @@
     <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.5.3.2" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Playground.Mobile\Playground.Mobile.csproj">
+    <ProjectReference Include="..\Playground.Forms\Playground.Forms.csproj">
       <Project>{A682884C-CB44-4A89-B752-27BB634E0ABE}</Project>
-      <Name>Playground.Mobile</Name>
+      <Name>Playground.Forms</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

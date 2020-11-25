@@ -1,6 +1,6 @@
-﻿using Playground.Mobile.Services;
+﻿using Playground.Forms.Services;
 
-namespace Playground.Mobile.ViewModels
+namespace Playground.Forms.ViewModels
 {
     public partial class MainPageViewModel : ViewModelBase
     {

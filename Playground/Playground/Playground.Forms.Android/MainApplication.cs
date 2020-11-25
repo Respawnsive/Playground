@@ -3,7 +3,7 @@ using Android.App;
 using Android.Runtime;
 using Shiny;
 
-namespace Playground.Mobile.Droid
+namespace Playground.Forms.Droid
 {
     [Application(Theme = "@style/MainTheme")]
     public class MainApplication : ShinyAndroidApplication<Startup>
