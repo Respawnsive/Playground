@@ -1,12 +1,9 @@
 ﻿using System;
 using Foundation;
-using Prism;
-using Prism.Ioc;
 using Shiny;
 using UIKit;
 
-
-namespace Playground.iOS
+namespace Playground.Mobile.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
     // User Interface of the application, as well as listening (and optionally responding) to 
@@ -16,7 +13,7 @@ namespace Playground.iOS
     {
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            this.ShinyFinishedLaunching(new MainStartup());
+            this.ShinyFinishedLaunching(new Startup());
 
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());

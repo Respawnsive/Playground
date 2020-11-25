@@ -31,7 +31,7 @@
     <key>CFBundleName</key>
     <string>Playground</string>
     <key>CFBundleIdentifier</key>
-    <string>com.companyname.appname</string>
+    <string>com.respawnsive.playground</string>
     <key>CFBundleVersion</key>
     <string>1.0</string>
     <key>CFBundleShortVersionString</key>

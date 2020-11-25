@@ -3,9 +3,9 @@ using Shiny;
 using Xamarin.Essentials.Implementation;
 using Xamarin.Essentials.Interfaces;
 
-namespace Playground
+namespace Playground.Mobile
 {
-    public partial class MainStartup : ShinyStartup
+    public partial class Startup : ShinyStartup
     {
         public override void ConfigureServices(IServiceCollection services)
         {

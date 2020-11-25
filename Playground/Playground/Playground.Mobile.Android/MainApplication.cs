@@ -3,10 +3,10 @@ using Android.App;
 using Android.Runtime;
 using Shiny;
 
-namespace Playground.Droid
+namespace Playground.Mobile.Droid
 {
     [Application(Theme = "@style/MainTheme")]
-    public class MainApplication : ShinyAndroidApplication<MainStartup>
+    public class MainApplication : ShinyAndroidApplication<Startup>
     {
         public MainApplication(IntPtr javaReference, JniHandleOwnership transfer)
             : base(javaReference, transfer)

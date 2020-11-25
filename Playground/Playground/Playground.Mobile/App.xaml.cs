@@ -1,12 +1,9 @@
 using System;
-using Playground.ViewModels;
-using Playground.Views;
-using Prism.Ioc;
 using Prism.Magician;
 using Prism.Navigation;
 using Xamarin.Forms;
 
-namespace Playground
+namespace Playground.Mobile
 {
     [AutoRegisterViews]
     public partial class App

@@ -1,7 +1,6 @@
-﻿using Playground.Services;
-using Prism.Magician;
+﻿using Playground.Mobile.Services;
 
-namespace Playground.ViewModels
+namespace Playground.Mobile.ViewModels
 {
     public partial class MainPageViewModel : ViewModelBase
     {

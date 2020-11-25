@@ -2,7 +2,7 @@ using Android.App;
 using Android.Content;
 using AndroidX.AppCompat.App;
 
-namespace Playground.Droid
+namespace Playground.Mobile.Droid
 {
     [Activity(Theme = "@style/MainTheme.Splash",
               MainLauncher = true,

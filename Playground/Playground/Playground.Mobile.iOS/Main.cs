@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using UIKit;
 
-using Foundation;
-using UIKit;
-
-namespace Playground.iOS
+namespace Playground.Mobile.iOS
 {
     public class Application
     {
