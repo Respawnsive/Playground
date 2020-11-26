@@ -1,10 +1,31 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Target Name="CopyConfigFiles" AfterTargets="PrepareForBuild">
+    <!-- Insert tasks to run before build here -->
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\Options\AppSettings\appsettings.$(Configuration).json" DestinationFiles="$(MSBuildProjectDirectory)\Options\AppSettings\appsettings.json" />
+    <Message Text="#Replaced appsetting.json... OK" />
+  </Target>
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Options\appsettings.debug.json" />
+    <None Remove="Options\appsettings.json" />
+    <None Remove="Options\appsettings.release.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Options\AppSettings\appsettings.debug.json" />
+    <EmbeddedResource Include="Options\AppSettings\appsettings.json" />
+    <EmbeddedResource Include="Options\AppSettings\appsettings.release.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.10" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="3.1.10" />
+    <PackageReference Include="Microsoft.Extensions.Options.DataAnnotations" Version="3.1.10" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="8.0.0.1909" />
     <PackageReference Include="Prism.Magician" Version="8.0.125-beta" />
     <PackageReference Include="ReactiveUI" Version="12.1.5" />
