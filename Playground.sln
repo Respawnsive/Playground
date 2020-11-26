@@ -3,18 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.Forms", "Playground\Playground.Forms\Playground.Forms.csproj", "{7938CF54-B8F3-4C1C-A88E-F7FDDD533BF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.Forms", "Forms\Playground.Forms\Playground.Forms.csproj", "{7938CF54-B8F3-4C1C-A88E-F7FDDD533BF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Forms.Android", "Playground\Playground.Forms.Android\Playground.Forms.Android.csproj", "{095F2308-FEF5-4E0D-981F-FA7E8920624C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Forms.Android", "Forms\Playground.Forms.Android\Playground.Forms.Android.csproj", "{095F2308-FEF5-4E0D-981F-FA7E8920624C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Forms.iOS", "Playground\Playground.Forms.iOS\Playground.Forms.iOS.csproj", "{A514BB00-A16C-4C2A-822A-2827D5769DF1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Forms.iOS", "Forms\Playground.Forms.iOS\Playground.Forms.iOS.csproj", "{A514BB00-A16C-4C2A-822A-2827D5769DF1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Items", "Items", "{B50DAA12-8D69-441A-8AA4-F098B9977587}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B50DAA12-8D69-441A-8AA4-F098B9977587}"
 	ProjectSection(SolutionItems) = preProject
 		NuGet.config = NuGet.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Forms.UWP", "Playground\Playground.Forms.UWP\Playground.Forms.UWP.csproj", "{C44A8B5A-C30F-43E7-B9E7-D1A8CDB7321B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Forms.UWP", "Forms\Playground.Forms.UWP\Playground.Forms.UWP.csproj", "{C44A8B5A-C30F-43E7-B9E7-D1A8CDB7321B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Forms", "Forms", "{D8704D36-C117-498E-83B7-C3D3039C3A17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -301,6 +303,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7938CF54-B8F3-4C1C-A88E-F7FDDD533BF9} = {D8704D36-C117-498E-83B7-C3D3039C3A17}
+		{095F2308-FEF5-4E0D-981F-FA7E8920624C} = {D8704D36-C117-498E-83B7-C3D3039C3A17}
+		{A514BB00-A16C-4C2A-822A-2827D5769DF1} = {D8704D36-C117-498E-83B7-C3D3039C3A17}
+		{C44A8B5A-C30F-43E7-B9E7-D1A8CDB7321B} = {D8704D36-C117-498E-83B7-C3D3039C3A17}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F9E7C708-94ED-4720-9FD3-1958AF9D46CA}
