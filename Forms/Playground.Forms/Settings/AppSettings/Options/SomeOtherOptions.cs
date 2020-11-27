@@ -1,11 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Playground.Forms.Options
+namespace Playground.Forms.Settings.AppSettings.Options
 {
-    public class FirstOptions
+    public class SomeOtherOptions
     {
-        public const string Section = "Section1";
-
         [RegularExpression(@"^[a-zA-Z0-9''-'\s]{1,40}$")]
         public string Key1 { get; set; }
         [Range(0, 1000, ErrorMessage = "Value for {0} must be between {1} and {2}.")]
