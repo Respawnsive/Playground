@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Playground.Forms.Settings.AppSettings.Options;
+using Playground.Forms.Settings.AppSettings.SectionSettings;
 using Shiny;
 
 namespace Playground.Forms.Settings
@@ -17,10 +17,10 @@ namespace Playground.Forms.Settings
                     .AddJsonStream(stream)
                     .Build();
 
-                services.Configure<AppCenterOptions>(config.GetSection(nameof(AppCenterOptions)));
+                services.Configure<AppCenterSettings>(config.GetSection(nameof(AppCenterSettings)), options => options.BindNonPublicProperties = true);
 
-                services.AddOptions<SomeOtherOptions>()
-                    .Bind(config.GetSection(nameof(SomeOtherOptions)))
+                services.AddOptions<SomeOtherSettings>()
+                    .Bind(config.GetSection(nameof(SomeOtherSettings)), options => options.BindNonPublicProperties = true)
                     .ValidateDataAnnotations();
             }
         }

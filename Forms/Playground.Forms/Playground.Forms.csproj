@@ -36,6 +36,7 @@
 
   <ItemGroup>
     <Folder Include="Services\" />
+    <Folder Include="Settings\SessionSettings\" />
     <Folder Include="Settings\UserSettings\" />
   </ItemGroup>
 
