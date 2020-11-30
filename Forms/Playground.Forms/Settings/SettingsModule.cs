@@ -1,8 +1,9 @@
 ﻿using System.Reflection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Playground.Forms.Settings.AppSettings;
-using Playground.Forms.Settings.SessionSettings;
+using Playground.Forms.Settings.App;
+using Playground.Forms.Settings.Session;
+using Playground.Forms.Settings.User;
 using Shiny;
 
 namespace Playground.Forms.Settings
@@ -11,14 +12,15 @@ namespace Playground.Forms.Settings
     {
         public override void Register(IServiceCollection services)
         {
-            // App settings loaded from Json files (readonly)
-            var stream = Assembly.GetAssembly(typeof(App)).GetManifestResourceStream($"{typeof(App).Namespace}.Settings.AppSettings.JsonSettings.appsettings.json");
+            // App settings (loaded from embedded json file)
+            var stream = Assembly.GetAssembly(typeof(Forms.App)).GetManifestResourceStream($"{typeof(Forms.App).Namespace}.Settings.App.Files.appsettings.json");
             if (stream != null)
             {
                 var config = new ConfigurationBuilder()
                     .AddJsonStream(stream)
                     .Build();
 
+                // Add all section settings here
                 services.Configure<AppCenterSettings>(config.GetSection(nameof(AppCenterSettings)), options => options.BindNonPublicProperties = true);
 
                 services.AddOptions<SomeAppSettings>()
@@ -26,11 +28,13 @@ namespace Playground.Forms.Settings
                     .ValidateDataAnnotations();
             }
 
-            // User settings (saved)
+            // User settings (saved to device preferences)
+            services.AddOptions<UserAccountSettings>();
+            services.AddOptions<UserPreferencesSettings>();
 
-            // Session settings (App lifetime)
-            services.Configure<SomeSessionSettings>(o => { });
-            //services.AddOptions<SomeSessionSettings>();
+            // Session settings (kept in-memory during app lifetime)
+            services.AddOptions<SomeSessionSettings>();
+            services.AddOptions<SomeOtherSessionSettings>();
         }
     }
 }
