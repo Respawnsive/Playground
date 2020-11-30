@@ -2,7 +2,7 @@
 
 namespace Playground.Forms.Settings.AppSettings
 {
-    public class SomeOtherSettings
+    public class SomeAppSettings
     {
         [RegularExpression(@"^[a-zA-Z0-9''-'\s]{1,40}$")]
         public string Key1 { get; private set; }

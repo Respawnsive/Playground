@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Options;
 using Playground.Forms.Services;
 using Playground.Forms.Settings.AppSettings;
+using Playground.Forms.Settings.SessionSettings;
 
 namespace Playground.Forms.ViewModels
 {
@@ -8,7 +9,7 @@ namespace Playground.Forms.ViewModels
     {
         public MainPageViewModel(BaseServices baseServices, 
             IOptions<AppCenterSettings> appCenterSettings,
-            IOptions<SomeOtherSettings> someOtherSettings)
+            IOptions<SomeAppSettings> someOtherSettings, IOptions<SomeSessionSettings> someSessionSettings)
             : base(baseServices)
         {
             Title = "Hello from Xamarin.Forms, Shiny, Prism & ReactiveUI!";
