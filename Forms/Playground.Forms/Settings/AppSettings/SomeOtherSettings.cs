@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Playground.Forms.Settings.AppSettings.SectionSettings
+namespace Playground.Forms.Settings.AppSettings
 {
     public class SomeOtherSettings
     {

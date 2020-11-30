@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Playground.Forms.Settings.AppSettings.SectionSettings;
+using Playground.Forms.Settings.AppSettings;
 using Shiny;
 
 namespace Playground.Forms.Settings
@@ -10,7 +10,7 @@ namespace Playground.Forms.Settings
     {
         public override void Register(IServiceCollection services)
         {
-            var stream = Assembly.GetAssembly(typeof(App)).GetManifestResourceStream($"{typeof(App).Namespace}.Settings.AppSettings.appsettings.json");
+            var stream = Assembly.GetAssembly(typeof(App)).GetManifestResourceStream($"{typeof(App).Namespace}.Settings.AppSettings.JsonSettings.appsettings.json");
             if (stream != null)
             {
                 var config = new ConfigurationBuilder()

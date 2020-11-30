@@ -1,4 +1,4 @@
-﻿namespace Playground.Forms.Settings.AppSettings.SectionSettings
+﻿namespace Playground.Forms.Settings.AppSettings
 {
     public class AppCenterSettings
     {

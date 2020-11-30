@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Options;
 using Playground.Forms.Services;
-using Playground.Forms.Settings.AppSettings.SectionSettings;
+using Playground.Forms.Settings.AppSettings;
 
 namespace Playground.Forms.ViewModels
 {
