@@ -1,6 +1,6 @@
 ﻿namespace Playground.Forms.Settings.AppSettings
 {
-    public class AppCenterSettings
+    public class AppCenterSettings : AppSettingsBase
     {
         public string Secret { get; private set; }
         public bool TrackCrashes { get; private set; }
