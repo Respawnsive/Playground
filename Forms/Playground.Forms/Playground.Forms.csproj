@@ -2,7 +2,7 @@
 
   <Target Name="CopyConfigFiles" AfterTargets="PrepareForBuild">
     <!-- Insert tasks to run before build here -->
-    <Copy SourceFiles="$(MSBuildProjectDirectory)\Settings\App\Files\appsettings.$(Configuration).json" DestinationFiles="$(MSBuildProjectDirectory)\Settings\App\Files\appsettings.json" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\Settings\AppSettings\SettingsFiles\appsettings.$(Configuration).json" DestinationFiles="$(MSBuildProjectDirectory)\Settings\AppSettings\SettingsFiles\appsettings.json" />
     <Message Text="#Replaced appsetting.json... OK" />
   </Target>
 
@@ -17,9 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Settings\App\Files\appsettings.debug.json" />
-    <EmbeddedResource Include="Settings\App\Files\appsettings.json" />
-    <EmbeddedResource Include="Settings\App\Files\appsettings.release.json" />
+    <EmbeddedResource Include="Settings\AppSettings\SettingsFiles\appsettings.debug.json" />
+    <EmbeddedResource Include="Settings\AppSettings\SettingsFiles\appsettings.json" />
+    <EmbeddedResource Include="Settings\AppSettings\SettingsFiles\appsettings.release.json" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Options;
 using Playground.Forms.Services;
-using Playground.Forms.Settings.App;
-using Playground.Forms.Settings.Session;
+using Playground.Forms.Settings.AppSettings;
+using Playground.Forms.Settings.SessionSettings;
 
 namespace Playground.Forms.ViewModels
 {

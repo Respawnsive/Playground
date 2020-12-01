@@ -1,17 +1,15 @@
-﻿using System.ComponentModel;
-using System.Globalization;
-using Prism.Magician;
+﻿using Prism.Magician;
 using Shiny.Settings;
 
-namespace Playground.Forms.Settings.User
+namespace Playground.Forms.Settings.UserSettings
 {
-    public class UserAccountSettings : UserSettingsBase
+    public partial class UserAccountSettings : UserSettingsBase
     {
         public UserAccountSettings(ISettings settings) : base(settings)
         {
         }
 
-        [Reactive]
+        [Reactive, Unclearable]
         public string UserId { get; set; }
 
         [Reactive]
