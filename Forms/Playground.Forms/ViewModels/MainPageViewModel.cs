@@ -1,15 +1,10 @@
-﻿using Microsoft.Extensions.Options;
-using Playground.Forms.Services;
-using Playground.Forms.Settings.AppSettings;
-using Playground.Forms.Settings.SessionSettings;
+﻿using Playground.Forms.Services;
 
 namespace Playground.Forms.ViewModels
 {
     public partial class MainPageViewModel : ViewModelBase
     {
-        public MainPageViewModel(BaseServices baseServices, 
-            IOptions<AppCenterSettings> appCenterSettings,
-            IOptions<SomeSessionSettings> someSessionSettings)
+        public MainPageViewModel(BaseServices baseServices)
             : base(baseServices)
         {
             Title = "Hello from Xamarin.Forms, Shiny, Prism & ReactiveUI!";

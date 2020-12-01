@@ -8,11 +8,6 @@ namespace Playground.Forms.Settings
 {
     public abstract class SettingsBase : ReactiveObject
     {
-        protected SettingsBase()
-        {
-            Init();
-        }
-
         /// <summary>
         /// Set default values
         /// </summary>

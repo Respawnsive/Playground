@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Reactive.Linq;
+using Shiny;
 using Shiny.Settings;
 
 namespace Playground.Forms.Settings.UserSettings
@@ -17,9 +18,13 @@ namespace Playground.Forms.Settings.UserSettings
     {
         private readonly ISettings _settings;
 
-        protected UserSettingsBase(ISettings settings)
+        protected UserSettingsBase()
         {
-            _settings = settings;
+            // This one can't be injected as constructor must be parameter-less
+            _settings = ShinyHost.Resolve<ISettings>();
+
+            // Init settings
+            Init();
 
             // Observe global clearing to set local properties back to default values
             _settings.Changed
@@ -31,8 +36,8 @@ namespace Playground.Forms.Settings.UserSettings
         /// Set default values and enable settings sync
         /// </summary>
         /// <param name="props">Properties to set (default: null = all)</param>
-        /// <param name="includeUnclearables"></param>
-        protected override void Init(IList<PropertyDescriptor> props = null, bool includeUnclearables = true)
+        /// <param name="includeUnclearables" >Init all, including unclearable properties if true (default: true)</param>
+        protected sealed override void Init(IList<PropertyDescriptor> props = null, bool includeUnclearables = true)
         {
             // Return to default values
             base.Init(props, includeUnclearables);
@@ -45,7 +50,7 @@ namespace Playground.Forms.Settings.UserSettings
         /// Return to default values
         /// </summary>
         /// <param name="props">Properties to set (default: null = all)</param>
-        /// <param name="includeUnclearables"></param>
+        /// <param name="includeUnclearables" >Init all, including unclearable properties if true (default: true)</param>
         protected override void Reset(IList<PropertyDescriptor> props = null, bool includeUnclearables = true)
         {
             // Get all editable properties if null

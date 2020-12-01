@@ -30,7 +30,7 @@ namespace Playground.Forms.Settings
 
             // UserSettings (sync with device preferences)
             services.AddOptions<UserAccountSettings>();
-            services.AddOptions<UserPreferencesSettings>();
+            services.AddOptions<UserProfileSettings>();
 
             // SessionSettings (kept in-memory during app lifetime)
             services.AddOptions<SomeSessionSettings>();

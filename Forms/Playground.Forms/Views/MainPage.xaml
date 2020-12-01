@@ -3,10 +3,12 @@
     x:Class="Playground.Forms.Views.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
     Title="Playground">
 
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
         <Label Text="{Binding Title}" />
+        <Button Command="{prism:NavigateTo 'AnotherPage'}" Text="Go to AnotherPage" />
     </StackLayout>
 
 </ContentPage>
