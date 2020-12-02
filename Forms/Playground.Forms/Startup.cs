@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Playground.Forms.Modules;
 using Playground.Forms.Settings;
 using Shiny;
 using Xamarin.Essentials.Implementation;
@@ -11,9 +12,9 @@ namespace Playground.Forms
         public override void ConfigureServices(IServiceCollection services)
         {
             // Add Xamarin Essentials
-            services.AddTransient<IAppInfo, AppInfoImplementation>();
+            services.RegisterModule<EssentialsModule>();
 
-            // Add config options
+            // Add Settings
             services.RegisterModule<SettingsModule>();
         }
     }

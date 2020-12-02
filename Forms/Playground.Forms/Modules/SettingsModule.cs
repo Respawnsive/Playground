@@ -6,21 +6,21 @@ using Playground.Forms.Settings.SessionSettings;
 using Playground.Forms.Settings.UserSettings;
 using Shiny;
 
-namespace Playground.Forms.Settings
+namespace Playground.Forms.Modules
 {
     public class SettingsModule : ShinyModule
     {
         public override void Register(IServiceCollection services)
         {
             // AppSettings (loaded from embedded json settings files to readonly properties)
-            var stream = Assembly.GetAssembly(typeof(Forms.App)).GetManifestResourceStream($"{typeof(Forms.App).Namespace}.Settings.AppSettings.SettingsFiles.appsettings.json");
+            var stream = Assembly.GetAssembly(typeof(App)).GetManifestResourceStream($"{typeof(App).Namespace}.Settings.AppSettings.SettingsFiles.appsettings.json");
             if (stream != null)
             {
                 var config = new ConfigurationBuilder()
                     .AddJsonStream(stream)
                     .Build();
 
-                // Add all sections settings here
+                // Add all settings sections here
                 services.Configure<AppCenterSettings>(config.GetSection(nameof(AppCenterSettings)), options => options.BindNonPublicProperties = true);
 
                 services.AddOptions<SomeAppSettings>()
