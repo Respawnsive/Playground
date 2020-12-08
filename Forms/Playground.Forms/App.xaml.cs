@@ -1,4 +1,5 @@
 using System;
+using Playground.Forms.Navigation;
 using Prism.Magician;
 using Prism.Navigation;
 using Xamarin.Forms;
@@ -14,7 +15,7 @@ namespace Playground.Forms
 
         protected override void OnInitialized()
         {
-            NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainPage)}")
+            NavigationService.NavigateAsync($"{NavigationKeys.NavigationPage}/{NavigationKeys.MainPage}")
                 .OnNavigationError(OnNavigationError);
         }
 

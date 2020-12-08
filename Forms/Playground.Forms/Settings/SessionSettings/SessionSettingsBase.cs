@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace Playground.Forms.Settings.SessionSettings
 {
-    public abstract class SessionSettingsBase : SettingsBase
+    public abstract class SessionSettingsBase : EditableSettingsBase
     {
         protected SessionSettingsBase()
         {
@@ -14,12 +14,23 @@ namespace Playground.Forms.Settings.SessionSettings
         /// <summary>
         /// Set default values
         /// </summary>
-        /// <param name="props">Properties to set (default: null = all)</param>
-        /// <param name="includeUnclearables" >Init all, including unclearable properties if true (default: true)</param>
-        protected sealed override void Init(IList<PropertyDescriptor> props = null, bool includeUnclearables = true)
+        protected sealed override void Init()
         {
             // Return to default values
-            base.Init(props, includeUnclearables);
+            SetDefaultValues();
+        }
+
+        /// <summary>
+        /// Clear saved settings and set it back to default values
+        /// </summary>
+        /// <param name="includeUnclearables" >Clear all, including unclearable properties if true (default: false)</param>
+        public override void Clear(bool includeUnclearables = false)
+        {
+            // Get all editable properties if force all mode or clearable one
+            var props = GetEditableProperties(includeUnclearables);
+
+            // Return to default values
+            SetDefaultValues(props);
         }
     }
 }

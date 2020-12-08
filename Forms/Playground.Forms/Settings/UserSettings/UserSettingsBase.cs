@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Reactive.Linq;
 using Shiny;
 using Shiny.Settings;
@@ -14,7 +12,7 @@ namespace Playground.Forms.Settings.UserSettings
     /// excepted for those decorated with UnclearableAttribute
     /// Will save in a secure encrypted way if decorated with Secure attribute
     /// </summary>
-    public abstract class UserSettingsBase : SettingsBase
+    public abstract class UserSettingsBase : EditableSettingsBase
     {
         private readonly ISettings _settings;
 
@@ -29,33 +27,29 @@ namespace Playground.Forms.Settings.UserSettings
             // Observe global clearing to set local properties back to default values
             _settings.Changed
                 .Where(x => x.Action == SettingChangeAction.Clear)
-                .Subscribe(_ => Reset());
+                .Subscribe(_ => OnGlobalClearing());
         }
 
         /// <summary>
         /// Set default values and enable settings sync
         /// </summary>
-        /// <param name="props">Properties to set (default: null = all)</param>
-        /// <param name="includeUnclearables" >Init all, including unclearable properties if true (default: true)</param>
-        protected sealed override void Init(IList<PropertyDescriptor> props = null, bool includeUnclearables = true)
+        protected sealed override void Init()
         {
-            // Return to default values
-            base.Init(props, includeUnclearables);
+            // Set to default values
+            SetDefaultValues();
 
-            // Enable settings sync back
+            // Enable settings sync
             _settings.Bind(this);
         }
 
         /// <summary>
-        /// Return to default values
+        /// Clear saved settings and set it back to default values
         /// </summary>
-        /// <param name="props">Properties to set (default: null = all)</param>
-        /// <param name="includeUnclearables" >Init all, including unclearable properties if true (default: true)</param>
-        protected override void Reset(IList<PropertyDescriptor> props = null, bool includeUnclearables = true)
+        /// <param name="includeUnclearables" >Clear all, including unclearable properties if true (default: false)</param>
+        public override void Clear(bool includeUnclearables = false)
         {
-            // Get all editable properties if null
-            if (props == null)
-                props = GetEditableProperties(includeUnclearables);
+            // Get all editable properties
+            var props = GetEditableProperties(includeUnclearables);
 
             // Iterate through each clearable property
             foreach (var prop in props)
@@ -65,8 +59,26 @@ namespace Playground.Forms.Settings.UserSettings
             // Disable settings sync while returning to default
             _settings.UnBind(this);
 
-            // Return to default values and enable settings sync back
-            base.Reset(props, includeUnclearables);
+            // Return to default values
+            SetDefaultValues(props);
+
+            // Enable settings sync back
+            _settings.Bind(this);
+        }
+
+        /// <summary>
+        /// Return to default values
+        /// </summary>
+        private void OnGlobalClearing()
+        {
+            // Disable settings sync while returning to default
+            _settings.UnBind(this);
+
+            // Return to default values
+            SetDefaultValues();
+
+            // Enable settings sync back
+            _settings.Bind(this);
         }
     }
 }

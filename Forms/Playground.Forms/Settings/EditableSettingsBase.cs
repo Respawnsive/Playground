@@ -6,40 +6,28 @@ using ReactiveUI;
 
 namespace Playground.Forms.Settings
 {
-    public abstract class SettingsBase : ReactiveObject
+    public abstract class EditableSettingsBase : ReactiveObject
     {
         /// <summary>
         /// Set default values
         /// </summary>
-        /// <param name="props">Properties to set (default: null = all)</param>
-        /// <param name="includeUnclearables" >Init all, including unclearable properties if true (default: true)</param>
-        protected virtual void Init(IList<PropertyDescriptor> props = null, bool includeUnclearables = true)
-        {
-            // Return to default values
-            SetDefaultValues(props, includeUnclearables);
-        }
+        protected abstract void Init();
 
         /// <summary>
-        /// Return to default values
+        /// Clear saved settings and set it back to default values
         /// </summary>
-        /// <param name="props">Properties to set (default: null = all)</param>
-        /// <param name="includeUnclearables" >Reset all, including unclearable properties if true (default: true)</param>
-        protected virtual void Reset(IList<PropertyDescriptor> props = null, bool includeUnclearables = true)
-        {
-            // Return to default values
-            Init(props, includeUnclearables);
-        }
+        /// <param name="includeUnclearables" >Clear all, including unclearable properties if true (default: false)</param>
+        public abstract void Clear(bool includeUnclearables = false);
 
         /// <summary>
         /// Set properties to default values based on System.ComponentModel.DefaultValueAttribute decoration
         /// </summary>
         /// <param name="props">Properties to set (default: null = all)</param>
         /// <param name="includeUnclearables" >Set all, including unclearable properties if true (default: true)</param>
-        protected void SetDefaultValues(IList<PropertyDescriptor> props = null, bool includeUnclearables = true)
+        protected void SetDefaultValues(IList<PropertyDescriptor> props = null)
         {
             // Get all editable properties if null
-            if (props == null)
-                props = GetEditableProperties(includeUnclearables);
+            props ??= GetEditableProperties();
 
             // Iterate through each property
             foreach (var prop in props)
@@ -48,19 +36,6 @@ namespace Playground.Forms.Settings
                     prop.SetValue(this, attr.Value);
                 // Otherwise set default type value
                 else prop.SetValue(this, default);
-        }
-
-        /// <summary>
-        /// Clear saved settings and set it back to default values
-        /// </summary>
-        /// <param name="includeUnclearables" >Clear all, including unclearable properties if true (default: false)</param>
-        public virtual void Clear(bool includeUnclearables = false)
-        {
-            // Get all editable properties if force all mode or clearable one
-            var props = GetEditableProperties(includeUnclearables);
-
-            // Return to default values
-            Reset(props, includeUnclearables);
         }
 
         /// <summary>
