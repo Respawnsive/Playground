@@ -21,8 +21,8 @@ namespace Playground.Forms.Modules
                     .Build();
 
                 // Add all settings sections here
-                services.Configure<AppCenterSettings>(config.GetSection(nameof(AppCenterSettings)), options => options.BindNonPublicProperties = true);
-
+                services.Configure<AppCenterSettings>(config.GetSection($"Logging:{nameof(AppCenterSettings)}"), options => options.BindNonPublicProperties = true);
+                services.Configure<FileLoggerSettings>(config.GetSection($"Logging:{nameof(FileLoggerSettings)}"), options => options.BindNonPublicProperties = true);
                 services.AddOptions<SomeAppSettings>()
                     .Bind(config.GetSection(nameof(SomeAppSettings)), options => options.BindNonPublicProperties = true)
                     .ValidateDataAnnotations();
