@@ -12,7 +12,7 @@ using Shiny.Logging;
 
 namespace Playground.Forms.Logging
 {
-    public class AppCenterLogger : ILogger
+    public class AppCenterLogger : IExtendedLogger
     {
         private readonly string _filePath;
         private readonly string _fileName;
@@ -28,15 +28,24 @@ namespace Playground.Forms.Logging
 
             var list = new List<Type>(2);
             if (appCenterSettings.Value.TrackCrashes)
+            {
                 list.Add(typeof(Crashes));
+                IsCrashEnabled = true;
+            }
 
             if (appCenterSettings.Value.TrackEvents)
+            {
                 list.Add(typeof(Analytics));
+                IsEventsEnabled = true;
+            }
 
             AppCenter.Start(appCenterSettings.Value.Secret, list.ToArray());
 
             Crashes.GetErrorAttachments = GetErrorAttachments;
         }
+
+        public bool IsCrashEnabled { get; }
+        public bool IsEventsEnabled { get; }
 
         private IEnumerable<ErrorAttachmentLog> GetErrorAttachments(ErrorReport report)
         {

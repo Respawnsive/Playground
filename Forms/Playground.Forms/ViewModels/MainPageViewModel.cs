@@ -1,4 +1,5 @@
 ﻿using Playground.Forms.Services;
+using Shiny.Logging;
 
 namespace Playground.Forms.ViewModels
 {
@@ -8,6 +9,7 @@ namespace Playground.Forms.ViewModels
             : base(baseServices)
         {
             Title = "Hello from Xamarin.Forms, Shiny, Prism & ReactiveUI!";
+            Log.Write("TestEvent", "TestDescription");
         }
     }
 }

@@ -1,9 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Playground.Forms.Modules;
-using Playground.Forms.Settings;
 using Shiny;
-using Xamarin.Essentials.Implementation;
-using Xamarin.Essentials.Interfaces;
 
 namespace Playground.Forms
 {
@@ -16,6 +13,9 @@ namespace Playground.Forms
 
             // Add Settings
             services.RegisterModule<SettingsModule>();
+
+            // Add Loggers
+            services.RegisterModule<LoggingModule>();
         }
     }
 }
