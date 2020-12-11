@@ -14,7 +14,7 @@ namespace Playground.Forms.Modules
             services.AddSingleton<ILogger, DebugLogger>();
             services.AddSingleton<ILogger, ConsoleLogger>();
 #endif
-            services.AddSingleton<ILogger, SizedFileLogger>();
+            services.AddSingleton<ILogger, LimitedFileLogger>();
             services.AddSingleton<ILogger, AppCenterLogger>();
         }
 

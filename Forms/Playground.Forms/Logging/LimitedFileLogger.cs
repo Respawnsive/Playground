@@ -8,13 +8,13 @@ using Shiny.Logging;
 
 namespace Playground.Forms.Logging
 {
-    public class SizedFileLogger : ILogger
+    public class LimitedFileLogger : ILogger
     {
         private readonly object _syncLock = new object();
         private readonly string _filePath;
         private readonly int _maxLines;
 
-        public SizedFileLogger(IOptions<FileLoggerSettings> fileLoggerSettings, IFileSystem fileSystem)
+        public LimitedFileLogger(IOptions<FileLoggerSettings> fileLoggerSettings, IFileSystem fileSystem)
         {
 #if DEBUG
             _filePath = Path.Combine(fileSystem.Public.FullName, fileLoggerSettings.Value.LogFileName);
