@@ -26,6 +26,7 @@ namespace Playground.Forms.Modules
                 services.AddOptions<SomeAppSettings>()
                     .Bind(config.GetSection(nameof(SomeAppSettings)), options => options.BindNonPublicProperties = true)
                     .ValidateDataAnnotations();
+                services.Configure<TheMovieDbSettings>(config.GetSection(nameof(TheMovieDbSettings)), options => options.BindNonPublicProperties = true);
             }
 
             // UserSettings (sync with device preferences)
