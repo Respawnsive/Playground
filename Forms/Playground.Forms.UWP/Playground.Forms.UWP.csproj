@@ -161,14 +161,17 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.11</Version>
     </PackageReference>
-    <PackageReference Include="Prism.DryIoc.Forms">
-      <Version>8.0.0.1909</Version>
+    <PackageReference Include="Prism.DryIoc.Extensions">
+      <Version>8.0.48</Version>
     </PackageReference>
-    <PackageReference Include="Prism.Magician">
-      <Version>8.0.146-beta</Version>
+    <PackageReference Include="ReactiveUI.Fody">
+      <Version>13.1.1</Version>
     </PackageReference>
     <PackageReference Include="Shiny.Core">
       <Version>1.2.0.1755</Version>
+    </PackageReference>
+    <PackageReference Include="Shiny.Prism">
+      <Version>8.0.48</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Essentials.Interfaces">
       <Version>1.6.0</Version>

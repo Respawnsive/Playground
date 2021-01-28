@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Shiny.Logging;
+﻿using Shiny.Logging;
 
 namespace Playground.Forms.Logging
 {

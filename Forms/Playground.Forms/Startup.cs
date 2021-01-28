@@ -1,12 +1,13 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Playground.Forms.Modules;
 using Shiny;
+using Shiny.Prism;
 
 namespace Playground.Forms
 {
-    public partial class Startup : ShinyStartup
+    public partial class Startup : PrismStartup
     {
-        public override void ConfigureServices(IServiceCollection services)
+        protected override void ConfigureServices(IServiceCollection services)
         {
             // Add Xamarin Essentials
             services.RegisterModule<EssentialsModule>();

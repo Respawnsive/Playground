@@ -8,7 +8,6 @@ using Microsoft.Extensions.Options;
 using Playground.Forms.Settings.AppSettings;
 using Shiny;
 using Shiny.IO;
-using Shiny.Logging;
 
 namespace Playground.Forms.Logging
 {

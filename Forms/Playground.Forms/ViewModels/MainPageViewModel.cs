@@ -1,15 +1,13 @@
 ﻿using Apizr;
-using Microsoft.AppCenter.Crashes;
-using Playground.Forms.Services;
 using Playground.Forms.Services.Apis;
-using Shiny.Logging;
+using Prism.Navigation;
 
 namespace Playground.Forms.ViewModels
 {
     public partial class MainPageViewModel : ViewModelBase
     {
-        public MainPageViewModel(BaseServices baseServices, IApizrManager<IMovieApi> movieManager)
-            : base(baseServices)
+        public MainPageViewModel(INavigationService navigationService, IApizrManager<IMovieApi> movieManager)
+            : base(navigationService)
         {
             Title = "Hello from Xamarin.Forms, Shiny, Prism & ReactiveUI!";
 

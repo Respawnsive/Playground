@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
-
-namespace Playground.Forms.Settings.SessionSettings
+﻿namespace Playground.Forms.Settings.SessionSettings
 {
     public abstract class SessionSettingsBase : EditableSettingsBase
     {

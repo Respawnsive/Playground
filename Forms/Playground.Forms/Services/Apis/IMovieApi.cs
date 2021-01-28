@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Apizr;
 using Apizr.Caching;
-using Apizr.Logging;
-using Apizr.Policing;
 using Playground.Forms.Models;
 using Refit;
 

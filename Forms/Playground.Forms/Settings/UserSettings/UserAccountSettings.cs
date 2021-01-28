@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel;
-using Prism.Magician;
+using ReactiveUI.Fody.Helpers;
 using Shiny.Settings;
 
 namespace Playground.Forms.Settings.UserSettings

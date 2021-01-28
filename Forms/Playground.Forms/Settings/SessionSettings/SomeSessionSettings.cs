@@ -1,4 +1,4 @@
-﻿using Prism.Magician;
+﻿using ReactiveUI.Fody.Helpers;
 
 namespace Playground.Forms.Settings.SessionSettings
 {

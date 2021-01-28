@@ -1,12 +1,14 @@
 using System;
-using Playground.Forms.Navigation;
-using Prism.Magician;
+using System.Diagnostics;
+using Playground.Forms.ViewModels;
+using Playground.Forms.Views;
+using Prism.Events;
+using Prism.Ioc;
 using Prism.Navigation;
 using Xamarin.Forms;
 
 namespace Playground.Forms
 {
-    [AutoRegisterViews]
     public partial class App
     {
         public App()
@@ -15,13 +17,22 @@ namespace Playground.Forms
 
         protected override void OnInitialized()
         {
-            NavigationService.NavigateAsync($"{NavigationKeys.NavigationPage}/{NavigationKeys.MainPage}")
-                .OnNavigationError(OnNavigationError);
+            InitializeComponent();
+            NavigationService.NavigateAsync($"NavigationPage/MainPage");
+        }
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+            containerRegistry.RegisterForNavigation<NavigationPage>(); 
+            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
         }
 
-        private void OnNavigationError(Exception ex)
+        protected override void OnNavigationError(INavigationError navigationError)
         {
-            System.Diagnostics.Debugger.Break();
+#if DEBUG
+            // Ensure we always break here while debugging!
+            Debugger.Break();
+#endif
+            base.OnNavigationError(navigationError);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Globalization;
-using Prism.Magician;
+using ReactiveUI.Fody.Helpers;
 
 namespace Playground.Forms.Settings.UserSettings
 {
