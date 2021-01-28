@@ -16,6 +16,12 @@ namespace Playground.Forms
 
             // Add Loggers
             services.RegisterModule<LoggingModule>();
+
+            // Add Apizr
+            services.RegisterModule<WebApiModule>();
+
+            // Add cache
+            services.UseRepositoryCache();
         }
     }
 }
